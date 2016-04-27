@@ -1,5 +1,5 @@
 #include "Game.h"
-#include <iostream>
+#include <limits>
 
 int Game::SCREEN_WIDTH = 1021;
 int Game::SCREEN_HEIGHT = 872;
@@ -99,7 +99,8 @@ void Game::gameLoop(Grid &grid, BelowGridBackground &below_bg,
 {
 	sf::Event event;
 	sf::Clock clock;
-	int generation_count = 0;
+	unsigned int generation_count = 0;
+	unsigned int max_unsigned_int_size = std::numeric_limits<unsigned int>::max();
 
 	while (true)
 	{
@@ -269,7 +270,16 @@ void Game::gameLoop(Grid &grid, BelowGridBackground &below_bg,
 		{
 			drawButton(*button);
 		}
-		observation.setString("Generation: " + std::to_string(generation_count) + "\nLive Cells: " + std::to_string(matrix.getLiveCellCount()));
+
+		if (generation_count == max_unsigned_int_size)
+		{
+			observation.setString("Generation: max_int_size\nLive Cells: " + std::to_string(matrix.getLiveCellCount()));
+			generation_count--;
+		}
+		else
+		{
+			observation.setString("Generation: " + std::to_string(generation_count) + "\nLive Cells: " + std::to_string(matrix.getLiveCellCount()));
+		}
 		drawObservation(observation);
 
 		window.display();
