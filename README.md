@@ -14,3 +14,11 @@ Some key ideas in the project are:
   - Event Interrupts Handling
   - Inheritance
   - Being More Modular
+
+***Visual Studio Project Dependencies Setup***
+
+Project Properties -> C/C++ -> Additional Include Directories -> $(ProjectDir)/include
+
+Project Properties -> Linker -> Additional Library Directories -> $(ProjectDir)/lib
+
+Project Properties -> Linker -> Input -> Additional Dependencies -> sfml-network-d.lib;sfml-audio-d.lib;sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)
