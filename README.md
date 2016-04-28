@@ -15,6 +15,15 @@ Some key ideas in the project are:
   - Inheritance
   - Being More Modular
 
+***Game Screenshots***
+
+<br>
+<img width="700" height="550" src="https://github.com/yf22zhan/Game-of-Life/blob/master/screenshots/game-of-life-1.PNG" />
+<br>
+<br>
+<img width="700" height="550" src="https://github.com/yf22zhan/Game-of-Life/blob/master/screenshots/game-of-life-2.PNG" />
+<br>
+
 ***Visual Studio Project Dependencies Setup***
 
 Project Properties -> C/C++ -> Additional Include Directories -> $(ProjectDir)/include
